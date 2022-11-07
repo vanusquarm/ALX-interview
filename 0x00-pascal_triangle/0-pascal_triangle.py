@@ -37,7 +37,7 @@ def pascal_triangle(height):
     triangle = []
 
     if height <= 0:
-        return [[]]
+        return []
     
     for i in range(height+1):
         triangle.append(pascal_coeff(i))
