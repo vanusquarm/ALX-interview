@@ -34,7 +34,7 @@ def pascal_coeff(power):
 '''
 
 def pascal_triangle(height):
-    triangle = []
+    triangle = [[]]
 
     if height <= 0:
         return []
