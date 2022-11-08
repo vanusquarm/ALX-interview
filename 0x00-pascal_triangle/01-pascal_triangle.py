@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 '''
 calculates and draws the graph for a pascal triangle using the combination approach
 [[1],
