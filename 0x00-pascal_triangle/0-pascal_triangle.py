@@ -5,15 +5,14 @@ calculates and draws the graph for a pascal triangle using the combination appro
 [1,1],
 [1,2,1]]
 """
-
-def pascal_triangle(height):
+def pascal_triangle(n):
     # all triangles of unit height are stored in the triangle list
     triangle = []
     # check against neg height
     if height <= 0:
         return [[]]
     
-    for h in range(height+1):
+    for h in range(n+1):
         coeffs = []
         
         # calculate pascal coeffs for each degree
