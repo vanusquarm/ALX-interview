@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-
+"""
+calculates and draws the graph for a pascal triangle using the combination approach
+[[1],
+[1,1],
+[1,2,1]]
+"""
 
 def pascal_triangle(height):
-    """
-	calculates and draws the graph for a pascal triangle using the combination approach
-	[[1],
-	[1,1],
-	[1,2,1]]
-    """
+    # all triangles of unit height are stored in the triangle list
     triangle = []
     # check against neg height
     if height <= 0:
