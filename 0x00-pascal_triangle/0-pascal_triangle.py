@@ -34,10 +34,10 @@ def pascal_coeff(power):
 '''
 
 def pascal_triangle(height):
-    triangle = [[]]
+    triangle = []
 
     if height <= 0:
-        return []
+        return [[]]
     
     for i in range(height+1):
         triangle.append(pascal_coeff(i))
