@@ -1,38 +1,23 @@
 #!/usr/bin/python3
 """
-calculates and draws the graph for a pascal triangle using the combination approach
-[[1],
-[1,1],
-[1,2,1]]
+Pascal's Triangle
 """
+
+
 def pascal_triangle(n):
-    # all triangles of unit height are stored in the triangle list
-    triangle = []
-    # check against neg height
-    if height <= 0:
+    """
+         returns a list of lists of
+         integers representing
+          the Pascal’s triangle of n
+         Returns an empty list if n <= 0
+    """
+    if n <= 0:
         return [[]]
-    
-    for h in range(n+1):
-        coeffs = []
-        
-        # calculate pascal coeffs for each degree
-        power = h
-        for i in range(power + 1):
-            sub = i
-            sup = power
-            nom = 1
-            denom = 1
-			
-            # calculate nCr
-            while( sub> 0):
-                nom *= sup
-                denom *= sub
-
-                sub -= 1
-                sup -= 1
-
-            coeffs.append(int(nom/denom))
-
-        triangle.append(coeffs)
-        
+    triangle = [[1]]
+    for i in range(1, n):
+        row = [1]
+        for j in range(1, i):
+            row.append(triangle[i - 1][j - 1] + triangle[i - 1][j])
+        row.append(1)
+        triangle.append(row)
     return triangle
