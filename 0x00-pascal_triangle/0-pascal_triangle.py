@@ -1,23 +1,45 @@
 #!/usr/bin/python3
 """
-Pascal's Triangle
+Pascal's Triangle using the combination approach
 """
 
 
-def pascal_triangle(n):
-    """
-         returns a list of lists of
-         integers representing
-          the Pascal’s triangle of n
-         Returns an empty list if n <= 0
-    """
-    if n <= 0:
-        return []
-    triangle = [[1]]
-    for i in range(1, n):
-        row = [1]
-        for j in range(1, i):
-            row.append(triangle[i - 1][j - 1] + triangle[i - 1][j])
-        row.append(1)
-        triangle.append(row)
+#eg. 5C2
+#super = 5;
+#sub = 2;
+
+def nCr(sup,sub):
+    nom = 1
+    denom = 1
+    while(sub > 0):
+        nom *= sup
+        denom *= sub
+
+        sub -= 1
+        sup -= 1
+
+    return int(nom/denom)
+
+
+#eg. pascal coefficient of 2 is [1 2 1]
+
+def pascal_coeff(power):
+    coeffs = []
+    for i in range(power+1):
+        coeffs.append(nCr(power,i))
+
+    return coeffs
+
+
+'''
+0C0           1
+1C0 1C1      1  1 
+2C0 2C1 2C0 1  2  1
+'''
+
+def pascal_triangle(height):
+    triangle = []
+    for i in range(height+1):
+        triangle.append(pascal_coeff(i))
+
     return triangle
